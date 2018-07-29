@@ -9,7 +9,6 @@ import android.nfc.cardemulation.HostApduService;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.Arrays;
 
@@ -57,7 +56,6 @@ public class CardService extends HostApduService {
         Log.i(TAG, "APDU recibido por el lector: " + utiles.ByteArrayToHexString(commandApdu));
         SharedPreferenceUtils pref = SharedPreferenceUtils.getInstance(this);
         String userName = pref.getValue("username", null);
-        Toast.makeText(getApplicationContext(), userName, Toast.LENGTH_LONG).show();
         if (Arrays.equals(LOGIN_ERROR, commandApdu)) {
             showNotificationLogin();
         }

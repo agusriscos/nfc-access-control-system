@@ -20,7 +20,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -331,7 +330,6 @@ public class MainActivity extends AppCompatActivity {
                         utiles.borrarRegistros(getApplicationContext());
                     }else if(mssg.equals(getString(R.string.refresh_card))){
                         pref.setValue("username",nombre.getText().toString());
-                        Toast.makeText(getApplicationContext(), pref.getValue("username",null), Toast.LENGTH_LONG).show();
                     }
                 }
             }
